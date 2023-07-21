@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1._1.Views.AboutPage"
+             Title="AboutPage">
+    <CollectionView>
+        <CollectionView.EmptyView>
+            <Grid BackgroundColor="#d9e1f2">
+                <Frame
+                           BorderColor="#d9e1f2"
+                    CornerRadius="90"
+                    BackgroundColor="#ebd1db">
+                    <StackLayout>
+                        <HorizontalStackLayout>
+                            <Image Source="memory1.png" HorizontalOptions="Start" VerticalOptions="Start" Rotation="350" HeightRequest="150"/>
+                            <Label Text="Take pictures" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="End" VerticalOptions="Center" Rotation="10" Margin="25,25,0,0"/>
+                        </HorizontalStackLayout>
+                        <VerticalStackLayout>
+                            <Label Text="Write down" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Start" VerticalOptions="End" Rotation="345" Padding="0,35,0,0"/>
+                            <Label Text="Your best memories" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Start" VerticalOptions="End" Rotation="345" HorizontalTextAlignment="Start"/>
+                            <Image Source="memory3.jfif" HorizontalOptions="End" VerticalOptions="Start" Rotation="10" HeightRequest="150"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Image Source="memory4.jfif" HorizontalOptions="Start" VerticalOptions="Start" Rotation="350" HeightRequest="150"/>
+                                <Label Text="Save them forever!" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Start" VerticalOptions="Center" Rotation="15"/>
+                            </HorizontalStackLayout>
+                                <Image Source="memory5.jfif" HorizontalOptions="End" VerticalOptions="Start" Rotation="10" HeightRequest="150"/>
+                        </VerticalStackLayout>
+                    </StackLayout>
+
+                </Frame>
+            </Grid>
+        </CollectionView.EmptyView>
+    </CollectionView>
+</ContentPage>

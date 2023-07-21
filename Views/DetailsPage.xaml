@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:model="clr-namespace:App1._1.Models"
+             xmlns:viewmodel="clr-namespace:App1._1.ViewModels"
+             x:DataType="model:PostModel"
+             x:Class="App1._1.Views.DetailsPage"
+             Title="{Binding Rubric}">
+
+    <Grid ColumnDefinitions="*"
+          RowDefinitions="*,*"
+          RowSpacing="0"
+          BackgroundColor="White">
+        
+        <ScrollView BackgroundColor="Transparent"
+                    Grid.RowSpan="100"
+                    VerticalScrollBarVisibility="Always">
+            
+            <VerticalStackLayout Grid.Row="1">
+                
+                <Image Source="{Binding Image}"
+                       x:Name="anImage"
+                       HeightRequest="250"
+                       BackgroundColor="Transparent"
+                       Margin="0,20,0,0"/>
+                
+                <Label Text="{Binding DateTime}" 
+                       HorizontalTextAlignment="Center" 
+                       FontAttributes="Bold" 
+                       TextColor="Black" 
+                       FontSize="Subtitle" />
+                
+                <VerticalStackLayout Margin="0,20,0,0">
+                    
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" 
+                                           Margin="0,0,0,20">
+                        <Button
+                            x:Name="TakePictureBtn"
+                            Text="Take a picture"
+                            Clicked="TakePictureBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            BorderWidth="3"
+                            BorderColor="#ebd1db"/>
+                        <Button
+                            x:Name="FilePickerBtn"
+                            Text="Choose a picture"
+                            Clicked="FilePickerBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="Start" 
+                            Margin="10,0,0,0"
+                            BackgroundColor="#b9c6e1"
+                            BorderColor="#d9e1f2"
+                            BorderWidth="3"
+                            FontAttributes="Bold"/>
+                        
+                    </HorizontalStackLayout>
+                    
+                    <Label Text="Describtion"  
+                           TextColor="Black" 
+                           FontSize="Subtitle" 
+                           HorizontalTextAlignment="Center" 
+                           FontAttributes="Bold"/>
+                    
+                    <Editor x:Name="inputText" 
+                            Text="{Binding Text}" 
+                            TextColor="Black" 
+                            Keyboard="Plain" 
+                            HeightRequest="150" 
+                            VerticalTextAlignment="Start" 
+                            FontAttributes="Bold" 
+                            FontSize="Subtitle" 
+                            Margin="20" 
+                            BackgroundColor="#d9e1f2" 
+                            HorizontalTextAlignment="Center"/>
+                    
+                    <HorizontalStackLayout 
+                        Grid.Row="2" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Center">
+                        
+                        <Button Text="Update"
+                                Clicked="UpdateBtn_Clicked"
+                                BackgroundColor="#dea7bb"
+                                BorderColor="#ebd1db"
+                                BorderWidth="3"
+                                Margin="10"
+                                WidthRequest="100"
+                                FontSize="Medium"
+                                FontAttributes="Bold"/>
+
+                        <Button Text="Delete Game"
+                                Clicked="DeleteBtn_Clicked"
+                                BackgroundColor="#b9c6e1"
+                                BorderColor="#d9e1f2"
+                                BorderWidth="3"
+                                Margin="10"
+                                WidthRequest="100"
+                                FontSize="Medium"
+                                FontAttributes="Bold"/>
+                        
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+

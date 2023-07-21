@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--source shell: https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/flyout-->
+<Shell
+    x:Class="App1._1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App1._1"
+    xmlns:view="clr-namespace:App1._1.Views"
+    xmlns:model="clr-namespace:App1._1.Models"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutHeaderBehavior="Fixed"
+    Shell.FlyoutVerticalScrollMode="Auto"
+    >
+
+    <Shell.FlyoutHeader>
+        <ContentView >
+            <Grid BackgroundColor="#ebd1db">
+                <Image Aspect="AspectFill"
+                       Source="header1.png"
+                       Opacity="0.9" 
+                       Margin="10"/>
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Home" Icon="home.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Create new Post" Icon="create.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate view:CreatePostPage}" Route="CreatePostPage"/>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="About" Icon="about.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate view:AboutPage}" Route="AboutPage"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Settings" Icon="settings.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate view:SettingsPage}" Route="SettingsPage"/>
+        </Tab>
+    </FlyoutItem>
+    <Shell.FlyoutFooter>
+        <ContentView>
+            <Label TextDecorations="Underline" Text="Made By: Polina Levnell" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        </ContentView>
+    </Shell.FlyoutFooter>
+</Shell>

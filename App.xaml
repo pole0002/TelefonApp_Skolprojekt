@@ -1,0 +1,42 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--Source shell: https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/flyout-->
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1._1"
+             xmlns:view="clr-namespace:App1._1.Views"
+             x:Class="App1._1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    <!--Flyout source : https://www.youtube.com/watch?v=KUzpFrReJNQ&t=8s-->
+    <Application.MainPage>
+        <Shell FlyoutBehavior="Flyout" 
+               FlyoutHeaderBehavior="Fixed"
+               FlyoutVerticalScrollMode="Auto">
+            
+            <FlyoutItem Title="Home" Icon="iconhome.jpg">
+                <Tab>
+                    <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+                </Tab>
+            </FlyoutItem>
+            
+            <FlyoutItem Title="Create new Post" Icon="iconhome.jpg">
+                <Tab>
+                <ShellContent ContentTemplate="{DataTemplate view:CreatePostPage}"/>
+                </Tab>
+            </FlyoutItem>
+            
+            <FlyoutItem Title="About" Icon="iconhome.jpg">
+                <Tab>
+                <ShellContent ContentTemplate="{DataTemplate view:AboutPage}"/> 
+                    </Tab>
+            </FlyoutItem>
+            
+        </Shell>
+    </Application.MainPage>
+</Application>

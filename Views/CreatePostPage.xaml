@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:App1._1.Models"
+             xmlns:viewmodel="clr-namespace:App1._1.ViewModels"
+             x:DataType="viewmodel:PostsViewModel"
+             x:Class="App1._1.Views.CreatePostPage"
+             Title="CreatePostPage">
+    <Grid BackgroundColor="White">
+        <ScrollView>
+            <VerticalStackLayout Margin="0,20,0,0">
+
+                <Label Text="Rubrics" 
+                       HorizontalTextAlignment="Start" 
+                       FontAttributes="Bold" 
+                       TextColor="Black" 
+                       FontSize="Medium"
+                       Margin="20,0,0,0"/>
+
+                <Editor x:Name="inputRubric" 
+                       TextColor="Black" 
+                       BackgroundColor="#d9e1f2"
+                        Placeholder="Rubrics"
+                        VerticalTextAlignment="Start"
+                        Margin="20,0,20,0"/>
+
+                <Image x:Name="anImage"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"
+                       BackgroundColor="#d9e1f2"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+
+                    <Button x:Name="TakePictureBtn"
+                            Text="Take a picture"
+                            Clicked="TakePictureBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            BorderWidth="3"
+                            BorderColor="#ebd1db"/>
+
+                    <Button x:Name="FilePickerBtn"
+                            Text="Choose a picture"
+                            Clicked="FilePickerBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="Start"  Margin="10,0,0,0"
+                            BackgroundColor="#b9c6e1"
+                            BorderColor="#d9e1f2"
+                            BorderWidth="3"/>
+
+                </HorizontalStackLayout>
+
+                <Label Text="Describction" 
+                       TextColor="Black" 
+                       FontSize="Medium"  
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"/>
+
+                <Editor x:Name="inputText"  
+                        TextColor="Black"  
+                        HeightRequest="150" 
+                        VerticalTextAlignment="Start" 
+                        FontAttributes="Bold" 
+                        FontSize="Subtitle" 
+                        Margin="20"
+                        Placeholder="Text..."
+                        BackgroundColor="#d9e1f2" 
+                        HorizontalTextAlignment="Start"/>
+                
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,20">
+                    <Button x:Name="SaveBtn"
+                            Text="Save Post"
+                            Clicked="SaveBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            BorderWidth="3"
+                            BorderColor="#ebd1db"/>
+
+                    <Button x:Name="CancelBtn"
+                            Text="Go Back"
+                            Clicked="CancelBtn_Clicked"
+                            VerticalOptions="End"
+                            HorizontalOptions="Start"
+                            WidthRequest="100"
+                            Margin="10,0,0,0"
+                            BackgroundColor="#b9c6e1"
+                            BorderColor="#d9e1f2"
+                            BorderWidth="3"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
